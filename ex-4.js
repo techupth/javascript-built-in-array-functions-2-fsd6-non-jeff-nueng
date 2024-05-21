@@ -373,5 +373,14 @@ const bills = [
   },
 ];
 
-// Start coding here
-const totalMembers;
+// Solve 1
+let totalMembers = bills.filter((data)=>{
+  return data.member !== null
+}).map((data)=>data.member.name).filter((value,index,array)=>{
+  return array.indexOf(value) === index
+})
+
+// Solve 2
+// totalMembers = new Set(totalMembers)
+// totalMembers = [...totalMembers]
+console.log(totalMembers)
