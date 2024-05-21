@@ -375,4 +375,13 @@ const bills = [
 
 // Start coding here
 
-const totalPaidByLocation;
+const totalPaidByLocation = {}
+bills.forEach((bill)=>{
+    if (totalPaidByLocation[bill.location]) {
+        totalPaidByLocation[bill.location] += bill.total
+    }else {
+        totalPaidByLocation[bill.location] = bill.total
+    }
+})
+
+console.log(totalPaidByLocation);

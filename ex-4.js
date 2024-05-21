@@ -373,5 +373,17 @@ const bills = [
   },
 ];
 
-// Start coding here
-const totalMembers;
+// Solve 1
+let totalMembers = bills.filter((data)=>data.member !== null).map((data)=>data.member.name).filter((value,index,array)=>{
+  return array.indexOf(value) === index
+})
+// Solve 2
+// totalMembers = new Set(totalMembers)
+// totalMembers = [...totalMembers]
+// Solve 3
+// const empty = new Set();
+// let totalMembers = bills.reduce((acc,curr)=>{
+//   return curr.member ? acc.add(curr.member.name) : acc
+// },empty)
+// console.log([...totalMembers])
+console.log(totalMembers.length)
