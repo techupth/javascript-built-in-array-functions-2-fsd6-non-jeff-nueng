@@ -374,4 +374,14 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+const totalMembers = bills.reduce((arr,curr)=>{
+  let memberName = curr.member && curr.member.name
+  console.log(memberName);
+  if(memberName && !arr.includes(memberName)){
+    console.log(arr);
+    console.log(curr.member && curr.member.name);
+    arr.push(memberName)
+  }
+  return arr
+},[])
+console.log("Unique Members Count:"+ totalMembers.length);

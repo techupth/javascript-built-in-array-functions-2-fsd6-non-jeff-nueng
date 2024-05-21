@@ -372,5 +372,9 @@ const bills = [
     pointRate: 0.01,
   },
 ];
-
-// Start coding here
+let result = bills.reduce((item,crr)=>{
+  console.log(item);
+  console.log(crr.total);
+  return item+crr.total
+},0)
+console.log(result);
