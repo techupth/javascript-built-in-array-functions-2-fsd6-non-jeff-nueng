@@ -1,3 +1,7 @@
+// จากข้อก่อนหน้านี้ ต่อมาเราต้องการเห็นเฉพาะชื่อสมาชิกจากรายการสั่งซื้อสินค้าทั้งหมด
+// ให้เขียนโปรแกรมที่สามารถแสดงผลชื่อสมาชิกจากรายการสั่งซื้อสินค้าทั้งหมด โดยใช้ Built-in Array Function
+
+
 const bills = [
   {
     id: "1",
@@ -374,4 +378,8 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+
+
+const billMembers = bills.map((bill) => bill.member).filter(bill => bill != null)
+// .filter(member=> typeof member.age != 'string');
+console.log(billMembers);

@@ -1,3 +1,7 @@
+// จาก Exercise #1 เจ้าของร้านอยากรู้ว่ายอดชำระทั้งหมดของแต่ละจังหวัดเป็นเท่าไหร่
+// ให้เขียน Function สำหรับหายอดชำระทั้งหมดที่เกิดขึ้นในแต่ละ Location
+
+
 const bills = [
     {
         id: "1",
@@ -375,4 +379,15 @@ const bills = [
 
 // Start coding here
 
-const totalPaidByLocation;
+const totalPaidByLocation = {};
+bills.forEach(bill => {
+   
+    if(totalPaidByLocation[bill.location]){
+        totalPaidByLocation[bill.location] += bill.total
+    } else {
+        totalPaidByLocation[bill.location] = bill.total
+    }
+    
+});
+    
+console.log(totalPaidByLocation);

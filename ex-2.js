@@ -1,3 +1,7 @@
+// จากข้อก่อนหน้านี้ จะสังเกตเห็นว่ารายการสั่งซื้อสินค้าบางรายการ จะไม่มีรายละเอียดสมาชิกเก็บไว้ ( มี Value เป็นnull )
+// ให้เขียนโปรแกรมที่เลือกเฉพาะรายการสั่งซื้อสินค้าที่มีข้อมูลสมาชิกเท่านั้น โดยใช้ Built-in Array Function
+
+
 const bills = [
   {
     id: "1",
@@ -375,4 +379,11 @@ const bills = [
 
 // Start coding here
 
-const newBills;
+function excludingNull (arr){
+  if(arr.member != null){
+    return arr.member ;
+  }
+}
+
+const newBills = bills.filter(excludingNull);
+console.log(newBills);

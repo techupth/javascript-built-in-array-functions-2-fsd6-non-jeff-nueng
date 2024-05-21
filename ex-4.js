@@ -1,3 +1,10 @@
+// จากข้อก่อนหน้า จะสังเกตเห็นว่าชื่อของสมาชิกจากรายการสั่งซื้อ มีชื่อที่ซํ้ากันอยู่
+// ให้เขียนโปรแกรมที่สามารถนับจำนวนสมาชิกทั้งหมด โดยจะไม่นับชื่อที่ซ้ำกัน โดยใช้ Built-in Array Function
+// เมื่อโปรแกรมทำงานสำเร็จ ควรจะแสดงผลลัพธ์ทางหน้าจอแบบนี้
+// "Unique Members Count: 12";
+
+
+
 const bills = [
   {
     id: "1",
@@ -374,4 +381,24 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+
+// const totalMembers = bills.reduce((acc,curr)=>{
+//   let memberName = curr.member && curr.member.name;
+//   if(memberName && !acc.includes(memberName)){
+//     acc.push(memberName);
+//   }
+//   return acc;
+// },[]);
+
+// console.log(totalMembers);
+// console.log(totalMembers.length);
+
+const totalMembers = bills.filter(bill => bill.member != null).map(bill => bill.member.name).reduce((acc,curr)=>{
+  if(!acc.includes(curr)){
+    acc.push(curr)
+  }
+  return acc;
+},[]).length;
+
+console.log(`Unique members Count: ${totalMembers}`);
+
